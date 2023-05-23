@@ -1,0 +1,8 @@
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+.spinner{
+  color: rgb(32, 109, 177);
+  width: '3rem';
+   height: '3rem';
+}
