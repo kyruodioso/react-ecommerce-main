@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <>
-      <MDBNavbar expand="lg" dark bgColor="primary">
+      <MDBNavbar expand="lg" dark bgColor="primary" className="sticky-top">
         <MDBContainer fluid>
           <MDBNavbarBrand tag={Link} to='/'>React-Ecommerce</MDBNavbarBrand>
           <MDBNavbarToggler

@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
+
 import {
   MDBBtn,
   MDBIcon,
@@ -16,6 +18,8 @@ import ButtonAddProduct from "../components/ButtonAddProduct";
 
 const SingleProduct = () => {
   const { product } = useLoaderData();
+  const { user } = useUserContext();
+
   return (
     <>
       <div className="d-flex justify-content-start mb-2 ms-3 mt-3">
@@ -25,11 +29,15 @@ const SingleProduct = () => {
         </MDBBtn>
       </div>
       <MDBCard style={{ width: "100%" }}>
-      <div className="d-flex justify-content-end me-3 mt-2">
-        <ButtonAddProduct />
-          <MDBBtn size="lg" rounded>
-            Comprar
-          </MDBBtn>
+        <div className="d-flex justify-content-end me-3 mt-2">
+          {user && (
+            <>
+              <ButtonAddProduct />
+              <MDBBtn size="lg" rounded>
+                Comprar
+              </MDBBtn>
+            </>
+          )}
         </div>
         <MDBRow className="g-0">
           <MDBCol md="4">
@@ -52,7 +60,6 @@ const SingleProduct = () => {
             </MDBCardBody>
           </MDBCol>
         </MDBRow>
-
       </MDBCard>
     </>
   );

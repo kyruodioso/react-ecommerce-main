@@ -1,6 +1,6 @@
 import React from 'react'
 import { useProductsContext } from '../context/ProductsContext'
-import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit'
+import { MDBBtn } from 'mdb-react-ui-kit'
 
 
 const ButtonAddProduct = () => {
@@ -11,11 +11,17 @@ const ButtonAddProduct = () => {
       }
 
   return (
-    <MDBBtn  className="me-1" color="info" floating size="lg" tag="a"
+    <MDBBtn
+    outline
+    color="primary"
+    size="sm"
+    className="mt-2"
     onClick={addToCart}
-     >
-       <MDBIcon fas icon="cart-plus" size="lg" />
-     </MDBBtn>  )
+
+  >
+    Agregar al carrito
+  </MDBBtn>
+)
 }
 
 export default ButtonAddProduct
